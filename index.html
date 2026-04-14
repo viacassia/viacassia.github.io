@@ -11,146 +11,199 @@
       --muted: #666666;
       --line: #dddddd;
       --link: #0a58ca;
-      --maxw: 820px;
+      --maxw: 760px;
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font: 16px/1.35 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--text);
       background: var(--bg);
     }
     .wrap {
       max-width: var(--maxw);
       margin: 0 auto;
-      padding: 24px 20px 64px;
+      padding: 24px 20px 56px;
     }
-    nav {
-      display: flex;
-      gap: 18px;
-      padding: 10px 0 24px;
+    .topbar {
+      padding: 0 0 18px;
       border-bottom: 1px solid var(--line);
       margin-bottom: 28px;
-      flex-wrap: wrap;
     }
-    nav a {
+    .home-link {
       color: var(--text);
       text-decoration: none;
+      font-weight: 500;
     }
-    nav a:hover { text-decoration: underline; }
+    .home-link:hover { text-decoration: underline; }
+    .page { display: none; }
+    .page.active { display: block; }
     h1 {
-      font-size: 28px;
-      margin: 0 0 6px;
+      font-size: 26px;
+      margin: 0 0 18px;
       font-weight: 700;
     }
-    .subtitle {
-      color: var(--muted);
-      margin: 0 0 28px;
+    .home-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
-    section {
-      padding: 10px 0 22px;
+    .home-item {
+      display: block;
+      padding: 12px 0;
+      color: var(--text);
+      text-decoration: none;
       border-bottom: 1px solid var(--line);
     }
-    h2 {
-      font-size: 22px;
-      margin: 0 0 14px;
+    .home-item:hover { text-decoration: underline; }
+    .empty {
+      color: var(--muted);
+      line-height: 1.5;
     }
     details {
       border: 1px solid var(--line);
       border-radius: 10px;
-      padding: 0;
-      margin: 14px 0;
+      margin: 12px 0;
       overflow: hidden;
+      background: #fff;
     }
     summary {
       list-style: none;
       cursor: pointer;
-      padding: 14px 16px;
+      padding: 12px 14px;
       font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      user-select: none;
       background: #fafafa;
     }
     summary::-webkit-details-marker { display: none; }
+    .arrow {
+      width: 14px;
+      display: inline-block;
+      flex: 0 0 14px;
+    }
+    details .arrow::before { content: "▸"; }
+    details[open] .arrow::before { content: "▾"; }
     details[open] summary {
       border-bottom: 1px solid var(--line);
     }
     .details-body {
-      padding: 14px 16px 16px;
+      padding: 12px 14px 14px;
+      line-height: 1.45;
     }
-    ul { margin: 8px 0 8px 20px; }
-    li { margin: 4px 0; }
+    p {
+      margin: 0 0 10px;
+      line-height: 1.5;
+    }
+    .details-body p:last-child { margin-bottom: 0; }
+    .label {
+      font-weight: 700;
+      margin: 0 0 8px;
+    }
+    ul {
+      margin: 0 0 14px 20px;
+      padding: 0;
+      line-height: 1.3;
+    }
+    li { margin: 3px 0; }
+    ul ul {
+      margin: 4px 0 6px 28px;
+    }
     a { color: var(--link); }
-    .small { color: var(--muted); font-size: 14px; }
-    .indent { margin-left: 18px; }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <nav>
-      <a href="#life-wisdom">Life wisdom</a>
-      <a href="#soft-skills">Soft skills</a>
-      <a href="#investing">Investing</a>
-    </nav>
+    <div class="topbar">
+      <a class="home-link" href="#home">Home</a>
+    </div>
 
-    <header>
-      <h1>Useful Educational Links</h1>
-      <p class="subtitle">A minimal one-page collection of useful learning materials.</p>
-    </header>
-
-    <section id="life-wisdom">
-      <h2>Life wisdom</h2>
-      <p class="small">Empty for now.</p>
-    </section>
-
-    <section id="soft-skills">
-      <h2>Soft skills</h2>
-      <p class="small">Empty for now.</p>
-    </section>
-
-    <section id="investing">
-      <h2>Investing</h2>
-
-      <details>
-        <summary>1. Why invest</summary>
-        <div class="details-body">
-          <p>To get rich. More precisely: to compound real purchasing power over long periods.</p>
-          <p>If you are <strong>10% per year ahead of inflation</strong>, you double your real wealth in about <strong>7.27 years</strong>.</p>
-          <p>If you are <strong>20% per year ahead of inflation</strong>, you double your real wealth in about <strong>3.80 years</strong>.</p>
+    <main>
+      <section id="home" class="page">
+        <div class="home-list">
+          <a class="home-item" href="#life-wisdom">Life wisdom</a>
+          <a class="home-item" href="#soft-skills">Soft skills</a>
+          <a class="home-item" href="#investing">Investing</a>
         </div>
-      </details>
+      </section>
 
-      <details open>
-        <summary>2. Learning materials for complete beginners</summary>
-        <div class="details-body">
-          <p><strong>Foundations</strong></p>
-          <ul>
-            <li>Very first hook: short Buffett clips</li>
-            <li class="indent"><a href="https://buffett.cnbc.com/video/2002/05/04/buffett-on-the-qualities-needed-to-be-a-great-investor.html">Buffett on temperament &gt; IQ</a></li>
-            <li class="indent"><a href="https://buffett.cnbc.com/video/2012/05/05/buffett-the-stock-market-is-a-psychotic-drunk.html">Buffett on Mr. Market</a></li>
-            <li class="indent"><a href="https://buffett.cnbc.com/video/2014/05/03/knowing-your-circle-of-competence.html">Buffett on circle of competence</a></li>
-            <li><em>The Little Book That Still Beats the Market</em> — Joel Greenblatt</li>
-            <li><em>One Up On Wall Street</em> — Peter Lynch</li>
-            <li><em>The Essays of Warren Buffett</em> — edited by Lawrence Cunningham</li>
-          </ul>
+      <section id="life-wisdom" class="page">
+        <h1>Life wisdom</h1>
+        <p class="empty">Empty for now.</p>
+      </section>
 
-          <p><strong>Then</strong></p>
-          <ul>
-            <li>Selected Berkshire Hathaway shareholder letters</li>
-            <li>Basic accounting: income statement, balance sheet, cash flow statement</li>
-            <li>Annual reports of simple businesses you already understand</li>
-          </ul>
+      <section id="soft-skills" class="page">
+        <h1>Soft skills</h1>
+        <p class="empty">Empty for now.</p>
+      </section>
 
-          <p><strong>Avoid at the beginning</strong></p>
-          <ul>
-            <li>Trading videos</li>
-            <li>Technical analysis</li>
-            <li>Macro doom content</li>
-            <li>Complex valuation models</li>
-            <li>Stock tips</li>
-          </ul>
-        </div>
-      </details>
-    </section>
+      <section id="investing" class="page">
+        <h1>Investing</h1>
+
+        <details>
+          <summary><span class="arrow"></span><span>1. Why invest</span></summary>
+          <div class="details-body">
+            <p>To get rich. Understand compounded growth: if you are 10% per year ahead of inflation you double your real worth in 7.27 years. if it's 20% -- 3.80 years.</p>
+          </div>
+        </details>
+
+        <details open>
+          <summary><span class="arrow"></span><span>2. Learning materials for complete beginners</span></summary>
+          <div class="details-body">
+            <p class="label">Foundations</p>
+            <ul>
+              <li>Very first hook: short Buffett clips
+                <ul>
+                  <li><a href="https://buffett.cnbc.com/video/2002/05/04/buffett-on-the-qualities-needed-to-be-a-great-investor.html">Buffett on temperament &gt; IQ</a></li>
+                  <li><a href="https://buffett.cnbc.com/video/2012/05/05/buffett-the-stock-market-is-a-psychotic-drunk.html">Buffett on Mr. Market</a></li>
+                  <li><a href="https://buffett.cnbc.com/video/2014/05/03/knowing-your-circle-of-competence.html">Buffett on circle of competence</a></li>
+                </ul>
+              </li>
+              <li><em>The Little Book That Still Beats the Market</em> — Joel Greenblatt</li>
+              <li><em>One Up On Wall Street</em> — Peter Lynch</li>
+              <li><em>The Essays of Warren Buffett</em> — edited by Lawrence Cunningham</li>
+            </ul>
+
+            <p class="label">Then</p>
+            <ul>
+              <li>Selected Berkshire Hathaway shareholder letters</li>
+              <li>Basic accounting: income statement, balance sheet, cash flow statement</li>
+              <li>Annual reports of simple businesses you already understand</li>
+            </ul>
+
+            <p class="label">Avoid at the beginning</p>
+            <ul>
+              <li>trading videos</li>
+              <li>technical analysis</li>
+              <li>macro doom content</li>
+              <li>complex valuation models</li>
+              <li>stock tips</li>
+            </ul>
+          </div>
+        </details>
+      </section>
+    </main>
   </div>
+
+  <script>
+    function showPage() {
+      const hash = window.location.hash || '#home';
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => page.classList.remove('active'));
+      const target = document.querySelector(hash);
+      if (target && target.classList.contains('page')) {
+        target.classList.add('active');
+      } else {
+        document.querySelector('#home').classList.add('active');
+      }
+      window.scrollTo(0, 0);
+    }
+
+    window.addEventListener('hashchange', showPage);
+    window.addEventListener('DOMContentLoaded', showPage);
+  </script>
 </body>
 </html>
