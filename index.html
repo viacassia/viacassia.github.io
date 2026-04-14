@@ -57,10 +57,6 @@
       border-bottom: 1px solid var(--line);
     }
     .home-item:hover { text-decoration: underline; }
-    .empty {
-      color: var(--muted);
-      line-height: 1.5;
-    }
     details {
       border: 1px solid var(--line);
       border-radius: 10px;
@@ -94,24 +90,27 @@
       padding: 12px 14px 14px;
       line-height: 1.45;
     }
+    .nested {
+      margin: 10px 0 0 14px;
+    }
+    .nested details {
+      margin: 8px 0;
+      border-radius: 8px;
+    }
+    .nested .details-body {
+      padding: 10px 12px 12px;
+    }
     p {
       margin: 0 0 10px;
       line-height: 1.5;
     }
     .details-body p:last-child { margin-bottom: 0; }
-    .label {
-      font-weight: 700;
-      margin: 0 0 8px;
-    }
     ul {
-      margin: 0 0 14px 20px;
+      margin: 0 0 2px 20px;
       padding: 0;
-      line-height: 1.3;
+      line-height: 1.28;
     }
-    li { margin: 3px 0; }
-    ul ul {
-      margin: 4px 0 6px 28px;
-    }
+    li { margin: 2px 0; }
     a { color: var(--link); }
   </style>
 </head>
@@ -133,82 +132,126 @@
       <section id="life-wisdom" class="page">
         <h1>Life wisdom</h1>
 
-        <p><a href="https://youtu.be/vGFD_odDf-E?is=z6iQcoWmhmp8mYz6">Lifetime learning video</a></p>
+        <details>
+          <summary><span class="arrow"></span><span>General</span></summary>
+          <div class="details-body">
+            <div class="nested">
+              <details>
+                <summary><span class="arrow"></span><span>Munger speech about lifetime learning</span></summary>
+                <div class="details-body">
+                  <p><a href="https://youtu.be/vGFD_odDf-E?is=z6iQcoWmhmp8mYz6">https://youtu.be/vGFD_odDf-E?is=z6iQcoWmhmp8mYz6</a></p>
+                </div>
+              </details>
+            </div>
+          </div>
+        </details>
       </section>
 
       <section id="soft-skills" class="page">
         <h1>Soft skills</h1>
 
-        <p>Edu/interview Videos &nbsp;&gt;&nbsp; Self improvement &nbsp;&gt;</p>
-        <p>A MIT professor taught the same lecture every January for 40 years, and every single time it was standing room only. Patrick Winston. The lecture is called "How to Speak.": your success in life will be determined largely by your ability to speak, your ability to write, and the quality of your ideas in that order.</p>
-        <p><a href="https://youtu.be/Unzc731iCUY?si=Vo8JYRyvfCX0wUH6">https://youtu.be/Unzc731iCUY?si=Vo8JYRyvfCX0wUH6</a></p>
+        <details>
+          <summary><span class="arrow"></span><span>Speaking</span></summary>
+          <div class="details-body">
+            <p>A MIT professor taught the same lecture every January for 40 years, and every single time it was standing room only. Patrick Winston. The lecture is called "How to Speak.": your success in life will be determined largely by your ability to speak, your ability to write, and the quality of your ideas in that order.</p>
+            <p><a href="https://youtu.be/Unzc731iCUY?si=Vo8JYRyvfCX0wUH6">https://youtu.be/Unzc731iCUY?si=Vo8JYRyvfCX0wUH6</a></p>
+          </div>
+        </details>
       </section>
 
       <section id="investing" class="page">
         <h1>Investing</h1>
-        <!--
+
         <details>
-          <summary><span class="arrow"></span><span>1. Why invest</span></summary>
+          <summary><span class="arrow"></span><span>Learning materials for complete beginners</span></summary>
           <div class="details-body">
-            <p>To get rich. Understand compounded growth: if you are 10% per year ahead of inflation you double your real worth in 7.27 years. if it's 20% -- 3.80 years.</p>
-          </div>
-        </details>
-        -->
+            <div class="nested">
+              <details>
+                <summary><span class="arrow"></span><span>Foundations</span></summary>
+                <div class="details-body">
+                  <div class="nested">
+                    <details>
+                      <summary><span class="arrow"></span><span>Very first hook: short Buffett clips</span></summary>
+                      <div class="details-body">
+                        <ul>
+                          <li><a href="https://buffett.cnbc.com/video/2002/05/04/buffett-on-the-qualities-needed-to-be-a-great-investor.html">Buffett on temperament &gt; IQ</a></li>
+                          <li><a href="https://buffett.cnbc.com/video/2012/05/05/buffett-the-stock-market-is-a-psychotic-drunk.html">Buffett on Mr. Market</a></li>
+                          <li><a href="https://buffett.cnbc.com/video/2014/05/03/knowing-your-circle-of-competence.html">Buffett on circle of competence</a></li>
+                        </ul>
+                      </div>
+                    </details>
 
-        <details open>
-          <summary><span class="arrow"></span><span>2. Learning materials for complete beginners</span></summary>
-          <div class="details-body">
-            <p class="label">Foundations</p>
-            <ul>
-              <li>Very first hook: short Buffett clips
-                <ul>
-                  <li><a href="https://buffett.cnbc.com/video/2002/05/04/buffett-on-the-qualities-needed-to-be-a-great-investor.html">Buffett on temperament &gt; IQ</a></li>
-                  <li><a href="https://buffett.cnbc.com/video/2012/05/05/buffett-the-stock-market-is-a-psychotic-drunk.html">Buffett on Mr. Market</a></li>
-                  <li><a href="https://buffett.cnbc.com/video/2014/05/03/knowing-your-circle-of-competence.html">Buffett on circle of competence</a></li>
-                </ul>
-              </li>
-              <li><a href="#"><em>The Little Book That Still Beats the Market</em></a> — Joel Greenblatt</li>
-              <li><em>One Up On Wall Street</em> — Peter Lynch</li>
-              <li><em>The Essays of Warren Buffett</em> — edited by Lawrence Cunningham</li>
-            </ul>
+                    <details>
+                      <summary><span class="arrow"></span><span>Books</span></summary>
+                      <div class="details-body">
+                        <ul>
+                          <li><em>The Little Book That Still Beats the Market</em> — Joel Greenblatt</li>
+                          <li><em>One Up On Wall Street</em> — Peter Lynch</li>
+                          <li><em>The Essays of Warren Buffett</em> — edited by Lawrence Cunningham</li>
+                        </ul>
+                      </div>
+                    </details>
 
-            <p class="label">Level 2</p>
-            <ul>
-              <li>Selected Berkshire Hathaway shareholder letters</li>
-              <li>Basic accounting: income statement, balance sheet, cash flow statement</li>
-              <li>Annual reports of simple businesses you already understand</li>
-            </ul>
+                    <details>
+                      <summary><span class="arrow"></span><span>Berkshire Hathaway shareholder letters</span></summary>
+                      <div class="details-body">
+                        <ul>
+                          <li>Selected Berkshire Hathaway shareholder letters</li>
+                        </ul>
+                      </div>
+                    </details>
+                  </div>
+                </div>
+              </details>
 
-            <p class="label">Risk mitigation</p>
-            <ul>
-              <li><a href="https://x.com/james56487175/status/1705964422840336443?s=46">2023 Keyser on how to manage risks</a></li>
-            </ul>
+              <details>
+                <summary><span class="arrow"></span><span>Level 2</span></summary>
+                <div class="details-body">
+                  <div class="nested">
+                    <details>
+                      <summary><span class="arrow"></span><span>Risk mitigation</span></summary>
+                      <div class="details-body">
+                        <ul>
+                          <li><a href="https://x.com/james56487175/status/1705964422840336443?s=46">2023 Keyser on how to manage risks</a></li>
+                        </ul>
+                      </div>
+                    </details>
 
-            <p class="label">Financial statements and Corporate reporting</p>
-            <ul>
-              <li><a href="https://x.com/brianferoldi/status/1807030908341367008?s=46">Brian Feroldi 9min acct stts for dummies</a></li>
-            </ul>
+                    <details>
+                      <summary><span class="arrow"></span><span>Basic accounting / financial statements</span></summary>
+                      <div class="details-body">
+                        <ul>
+                          <li><a href="https://x.com/brianferoldi/status/1807030908341367008?s=46">Brian Feroldi 9min acct stts for dummies</a></li>
+                        </ul>
+                      </div>
+                    </details>
 
-            <p class="label">Extras</p>
-            <ul>
-              <li>Personal stories
-                <ul>
-                  <li><a href="https://x.com/kreuzmann13/status/1770457312508924370?s=46">19yo start of investing career via twitter</a></li>
-                  <li><a href="https://youtu.be/vp9xLWoWj-4?si=C2Q71xu_yRzHYyx1">How I became a short seller</a></li>
-                </ul>
-              </li>
-            </ul>
+                    <details>
+                      <summary><span class="arrow"></span><span>Annual reports of simple businesses you already understand</span></summary>
+                      <div class="details-body">
+                      </div>
+                    </details>
+                  </div>
+                </div>
+              </details>
 
-            <!--
-            <p class="label">Avoid at the beginning</p>
-            <ul>
-              <li>trading videos</li>
-              <li>technical analysis</li>
-              <li>macro doom content</li>
-              <li>complex valuation models</li>
-              <li>stock tips</li>
-            </ul>
-            -->
+              <details>
+                <summary><span class="arrow"></span><span>Extras</span></summary>
+                <div class="details-body">
+                  <div class="nested">
+                    <details>
+                      <summary><span class="arrow"></span><span>Personal stories</span></summary>
+                      <div class="details-body">
+                        <ul>
+                          <li><a href="https://x.com/kreuzmann13/status/1770457312508924370?s=46">19yo start of investing career via twitter</a></li>
+                          <li><a href="https://youtu.be/vp9xLWoWj-4?si=C2Q71xu_yRzHYyx1">How I became a short seller</a></li>
+                        </ul>
+                      </div>
+                    </details>
+                  </div>
+                </div>
+              </details>
+            </div>
           </div>
         </details>
       </section>
